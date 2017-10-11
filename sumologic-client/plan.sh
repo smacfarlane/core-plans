@@ -13,7 +13,10 @@ pkg_lib_dirs=(19.209-5/lib 19.209-5/bin/native/lib)
 pkg_bin_dirs=(19.209-5/bin)
 pkg_description="Sumo Logic’s powerful, scalable SaaS platform analyzes log data and metrics together in real time."
 pkg_upstream_url="https://www.sumologic.com"
+pkg_svc_user="root"
+pkg_svc_group="root"
 
+cache={{pkg.svc_data_path}}/cache
 do_build() {
   return 0
 }
@@ -30,7 +33,7 @@ do_install() {
   chmod +x wrapper "${pkg_version}/bin/collector"
   mv "tanuki/linux64/libwrapper.so" "${pkg_version}/bin/native/lib/"
   
-  rm -r powershell tanuki SumoEtw.man collector config\
+  rm -r powershell tanuki SumoEtw.man collector config \
   "${pkg_version}/bin/native/lib/libsigar-universal64-macosx.dylib" \
   "${pkg_version}/bin/native/lib/libsigar-x86-linux.so"
   
