@@ -1,4 +1,4 @@
-# Habitat package: haproxy
+# Habitat package: nats-top
 
 ## Description 
 
