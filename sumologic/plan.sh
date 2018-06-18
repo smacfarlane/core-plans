@@ -1,12 +1,12 @@
 pkg_name=sumologic
 pkg_origin=core
-pkg_version="19.209-41"
+pkg_version="19.227-4"
 pkg_license=('Apache-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Sumo Logic’s powerful, scalable SaaS platform analyzes log data and metrics together in real time."
 pkg_upstream_url="https://www.sumologic.com"
 pkg_source="https://collectors.sumologic.com/rest/download/tar"
-pkg_shasum="2e1ea9cc943da838efe7b60e24efe3586ae711c4a3cc1d8e01cec2468bcea993"
+pkg_shasum="c888beae63583f83f4fa25057c5ed0ded6e4ac8e2f6f2f92004684215d561ed0"
 pkg_dirname="sumocollector"
 pkg_filename="SumoCollector_unix_${pkg_version/./_}.tar.gz"
 pkg_deps=(
