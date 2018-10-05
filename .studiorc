@@ -1,0 +1,30 @@
+do_setup() {
+  return 0
+}
+
+do_binary_tests() {
+  return 0
+}
+
+do_service_tests() {
+  return 0
+}
+
+# Takes the location of a plan and a fully qualified ident to test
+# Ideally I think we would want the framework to figure this out for us, but lets make it go first
+verify() {
+  declare -a test_deps
+
+  export PLAN_CONTEXT=$(readlink -f "${1:-$(pwd)}")
+  if [[ -f $PLAN_CONTEXT/verify.sh ]]; then
+    source $PLAN_CONTEXT/verify.sh
+    # for experimentation purposes this is good enough
+    export pkg_ident=$(cat /hab/pkgs/core/$pkg_name/*/*/IDENT)
+  fi
+
+  hab pkg install "${test_deps[@]}"
+
+  do_setup
+  do_binary_tests
+  do_service_tests
+}
