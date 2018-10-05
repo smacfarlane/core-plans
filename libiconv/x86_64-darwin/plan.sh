@@ -1,4 +1,4 @@
-source ../plan.sh 
+source ../plan.sh
 pkg_deps=()
 pkg_build_deps=(core/coreutils)
 pkg_lib_dirs=(lib)
