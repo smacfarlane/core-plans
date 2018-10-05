@@ -1,4 +1,4 @@
-source ../plan.sh 
+source ../plan.sh
 
 pkg_deps=(core/ncurses)
 pkg_build_deps=(core/bison core/grep)

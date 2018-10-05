@@ -1,4 +1,4 @@
-source ../plan.sh 
+source ../plan.sh
 
 pkg_deps=(core/gmp core/mpfr)
 pkg_build_deps=()

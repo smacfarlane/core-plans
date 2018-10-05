@@ -1,4 +1,4 @@
-source ../plan.sh 
+source ../plan.sh
 
 pkg_deps=(
   core/zlib
@@ -87,13 +87,10 @@ do_build() {
     -Dloclibpth="$loclibpth" \
     -Dpager="$(pkg_path_for less)/bin/less -isR" \
     -Dinstallstyle=lib/perl5 \
-    -Uinstallusrbinperl \
     -Duseshrplib \
-    -Dusethreads \
     -Dinc_version_list=none \
-    -Dlddlflags="-shared ${LDFLAGS}" \
-    -Dldflags="${LDFLAGS}"
   make -j"$(nproc)"
+    # -Uinstallusrddbinperl \
 
   # Clear temporary build time environment variables
   unset BUILD_ZLIB BUILD_BZIP2

@@ -1,4 +1,4 @@
-source ../plan.sh 
+source ../plan.sh
 
 pkg_deps=(core/ncurses core/readline)
 pkg_build_deps=(core/coreutils)
